@@ -28,6 +28,13 @@ spec:
         - name: http
           port: 3001
       publicPort: http
+      resources:
+        requests:
+          memory: "100Mi"
+          cpu: "100m"
+        limits:
+          memory: "100Mi"
+          cpu: "200m"
       variables:
         PORT: 3001
         ECHO_URL: "http://server:3000"
