@@ -20,6 +20,8 @@ spec:
       variables:
         PORT: 3000
         APP_VARIABLE: "common"
+      secrets:
+        - SECRET1
       environmentConfig:
         - environment: demo
           variables:
@@ -46,7 +48,7 @@ spec:
           horizontalScaling:
             minReplicas: 2
             maxReplicas: 5
-        - environment: prod
+        - environment: demo
           horizontalScaling:
             minReplicas: 2
             maxReplicas: 5
