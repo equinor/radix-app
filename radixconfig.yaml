@@ -10,7 +10,7 @@ spec:
     - name: prod
       build:
         from: release
-    - name: manual
+    - name: demo
   components:
     - name: server
       src: ./backend
@@ -21,9 +21,9 @@ spec:
         PORT: 3000
         APP_VARIABLE: "common"
       environmentConfig:
-        - environment: manual
+        - environment: demo
           variables:
-            APP_VARIABLE: "environment specific value"
+            APP_VARIABLE: "Demo app variable"
     - name: www
       src: ./frontend
       ports:
