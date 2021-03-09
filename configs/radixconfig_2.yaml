@@ -53,5 +53,5 @@ spec:
             minReplicas: 2
             maxReplicas: 5
   dnsAppAlias:
-    environment: dev
+    environment: prod
     component: www

@@ -7,9 +7,6 @@ spec:
     - name: dev
       build:
         from: main
-    - name: prod
-      build:
-        from: release
   components:
     - name: server
       src: ./backend
