@@ -10,7 +10,6 @@ spec:
     - name: prod
       build:
         from: release
-    - name: demo
   components:
     - name: server
       src: ./backend
@@ -19,10 +18,11 @@ spec:
           port: 3000
       variables:
         PORT: 3000
-        APP_VARIABLE: "common"
-      secrets:
-        - SECRET1
+        APP_VARIABLE: "default"
       environmentConfig:
+        - environment: prod
+          variables:
+            APP_VARIABLE: "Prod app variable"
         - environment: demo
           variables:
             APP_VARIABLE: "Demo app variable"
@@ -34,21 +34,17 @@ spec:
       publicPort: http
       resources:
         requests:
-          memory: "100Mi"
+          memory: "50Mi"
           cpu: "50m"
         limits:
-          memory: "100Mi"
+          memory: "50Mi"
           cpu: "50m"
       variables:
         PORT: 3001
         ECHO_URL: "http://server:3000"
       environmentConfig:
-        - environment: dev
+        - environment: prod
           replicas: 2
-          horizontalScaling:
-            minReplicas: 2
-            maxReplicas: 5
-        - environment: demo
           horizontalScaling:
             minReplicas: 2
             maxReplicas: 5

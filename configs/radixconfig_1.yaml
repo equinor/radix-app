@@ -18,6 +18,11 @@ spec:
           port: 3000
       variables:
         PORT: 3000
+        APP_VARIABLE: "default"
+      environmentConfig:
+        - environment: prod
+          variables:
+            APP_VARIABLE: "Prod app variable"
     - name: www
       src: ./frontend
       ports:
@@ -27,3 +32,6 @@ spec:
       variables:
         PORT: 3001
         ECHO_URL: "http://server:3000"
+  dnsAppAlias:
+    environment: prod
+    component: www
