@@ -43,8 +43,17 @@ spec:
       variables:
         PORT: 3001
         ECHO_URL: "http://server:3000"
+      secrets:
+        - DB_PASS
       environmentConfig:
         - environment: prod
+          resources:
+            requests:
+              memory: "500Mi"
+              cpu: "50m"
+            limits:
+              memory: "500Mi"
+              cpu: "50m"
           replicas: 2
           horizontalScaling:
             minReplicas: 2
