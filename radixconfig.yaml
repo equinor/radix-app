@@ -18,11 +18,11 @@ spec:
           port: 3000
       variables:
         PORT: 3000
-        APP_VARIABLE: "default"
+        GREETING_MESSAGE: "Hello there"
       environmentConfig:
         - environment: prod
           variables:
-            APP_VARIABLE: "Prod app variable"
+            GREETING_MESSAGE: "Hello and welcome to the PROD environment"
     - name: www
       src: ./frontend
       ports:
