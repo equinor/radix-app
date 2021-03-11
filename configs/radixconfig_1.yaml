@@ -18,6 +18,11 @@ spec:
           port: 3000
       variables:
         PORT: 3000
+        GREETING_MESSAGE: "Hello there"
+      environmentConfig:
+        - environment: prod
+          variables:
+            GREETING_MESSAGE: "Hello and welcome to the PROD environment"
     - name: www
       src: ./frontend
       ports:
@@ -27,3 +32,6 @@ spec:
       variables:
         PORT: 3001
         ECHO_URL: "http://server:3000"
+  dnsAppAlias:
+    environment: prod
+    component: www

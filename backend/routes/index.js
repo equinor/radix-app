@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
         'RADIX_ENVIRONMENT': (process.env.RADIX_ENVIRONMENT || 'empty'),
         'HOSTNAME': (os.hostname() || 'empty'),
         'HOSTPLATFORM': (os.platform() || '0'),
-        'APP_VARIABLE': (process.env.APP_VARIABLE || 'empty')
+        'GREETING_MESSAGE': (process.env.GREETING_MESSAGE || '')
     };
 
     res.set('Content-Type', 'application/json');
