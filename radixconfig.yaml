@@ -24,9 +24,11 @@ spec:
         - environment: prod
           variables:
             GREETING_MESSAGE: "Hello and welcome to the PROD environment"
+          runAsNonRoot: true
         - environment: demo
           variables:
             GREETING_MESSAGE: "Hello and welcome to the DEMO environment"
+          runAsNonRoot: true
     - name: www
       src: ./frontend
       ports:
@@ -47,6 +49,7 @@ spec:
         - DB_PASS
       environmentConfig:
         - environment: prod
+          runAsNonRoot: true        
           resources:
             requests:
               memory: "250M"
@@ -58,6 +61,8 @@ spec:
           horizontalScaling:
             minReplicas: 2
             maxReplicas: 5
+        - environment: demo
+          runAsNonRoot: true
   dnsAppAlias:
     environment: prod
     component: www
