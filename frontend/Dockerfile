@@ -27,4 +27,5 @@ WORKDIR /usr/src/app
 COPY --from=dependencies /usr/src/app/node_modules_production ./node_modules
 EXPOSE 3007
 ENV NODE_ENV=production
+USER 1000
 ENTRYPOINT [ "npm", "start"]
