@@ -13,13 +13,13 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
-    "express": "~4.17.1",
-    "http-errors": "~1.8.1",
+    "express": "~4.19.2",
+    "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "request": "^2.88.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.19.4"
   }
 }
